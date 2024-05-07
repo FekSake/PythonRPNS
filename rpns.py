@@ -1,21 +1,16 @@
 import os
 
-
-
 class Stack():
     def __init__(self):
         self.stack = []
     
     def push(self, value):
-        #print(f"Pushed to stack... Before : {self.stack}")
         self.stack.append(value)
-        #print(f"After : {self.stack}")
     
     def pop(self):
-        #print(f"Popped from stack... Before : {self.stack}")
         value = self.stack[-1]
         self.stack.pop(-1)
-        #print(f"After : {self.stack}")
+
         return value
 
     def isEmpty(self):
@@ -26,14 +21,12 @@ class Stack():
 
 
 def solverpn(rpn):
-
     def isNum(s):
         try:
             float(s)
             return True
         except ValueError:
             return False
-
 
     s = Stack()
     if isinstance(rpn, str):
@@ -43,9 +36,7 @@ def solverpn(rpn):
     else:
         TypeError("Invalid rpn type")
     inBracket = 0
-    #print(rpn)
     for value in rpn:
-        #print(s.stack)
         value = str(value)
         if isNum(value):
             s.push(float(value))
@@ -95,7 +86,6 @@ def solverpn(rpn):
 
 os.system("cls|title RPNS // Made by FekSake" if os.name == "nt" else "clear")
 
-
 def gradient_text(text, start_color, end_color):
     gradient_text = ""
     color_step = len(text) / (len(text) - 1)
@@ -120,43 +110,12 @@ end_color = (0, 0, 255)    # Blue
 gradient_colored_text = gradient_text(text, start_color, end_color)
 print(gradient_colored_text)
 
-
-
 print(f"Reverse Polish Notation Solver")
 print(f"https://github.com/FekSake/PythonRPNS")
 print(f"Avalible operations...\n+ for adding\n- for subtracting\n/ for dividing\n* for multiplication\n^ for powers\nAnd brackets ()")
 print(f"USAGE : Enter your reverse polish notation string, for example \" -> 5 2 / 1 + 2 ^\" and get the answer!")
 print(f"{' '*len('USAGE : Enter your reverse polish notation string, for example ')}\"Result : 12.5    \"")
 rpn = input(f"Input a reverse polish notation string...\nNOTICE : Make sure all numbers, operaters and brackets are seperated by a space...\n\n -> ")
-
-
-"""
-Can do + - / * and powers (^)
-Can do brackets and brackets in brackets
-RPN
-operand1 operand2 operater
-
-"""
-
-
-
-"""
-rpn = "5 3 + ( 3 ( 3 3 + 12 - ) - ) + 12 3 * +"
-
-Checking if comp was correct
-Comp said 53
-
-5 + 3 = 8
-
-8 (3 ( 3 3 + 12 - ) -) + 12 3 * +
-8 9 + 12 3 * +
-17 12 3 * +
-17 36 + 
-53
-
-Comp was correct
-Code complete
-"""
 
 print(f"Calculating {rpn}")
 result = solverpn(rpn)

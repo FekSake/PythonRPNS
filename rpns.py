@@ -123,7 +123,7 @@ print(gradient_colored_text)
 
 
 print(f"Reverse Polish Notation Solver")
-print(f"https://github.com/FekSake/PythonRPNS/tree/main")
+print(f"https://github.com/FekSake/PythonRPNS")
 print(f"Avalible operations...\n+ for adding\n- for subtracting\n/ for dividing\n* for multiplication\n^ for powers\nAnd brackets ()")
 print(f"USAGE : Enter your reverse polish notation string, for example \" -> 5 2 / 1 + 2 ^\" and get the answer!")
 print(f"{' '*len('USAGE : Enter your reverse polish notation string, for example ')}\"Result : 12.5    \"")
